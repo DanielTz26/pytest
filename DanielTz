@@ -1,0 +1,34 @@
+importe pytest
+from selenium import webdriver
+@pytest.mark.parametrize("base",[2,3,4])
+def test_load_page(base):
+#Inicializamos el navegador
+driver = webdriver.chrome()
+driver.get("https://example.com")
+#Verificamos que la pagina cargue correctamente
+assert driver.title == "Marth Problem Solver"
+# Cerramos el navegador
+driver.quit()
+
+
+import pytest
+from selenium import webdriver
+@pytest.mark.parametrize("base,height",^[(2,3),(3,4),(4,5)])
+def test_solve_problem(base, height);
+# Inicializamos el navegador
+driver = webdriver.chrome()
+driver.get("https://example.com")
+#Introducimos los valores de base y altura
+input_base = driver. find_element_by_name("base")
+input_base.send_keys(str(base))
+input_height= driver.find_element_by_name("height")
+input_height.send_keys(str(height))
+# Enviar el formulario
+submit_button = driver.find_element_by_name("submit")
+submit_button.click()
+# Verificamos que le resultado sea correcto
+result = driver.find_element_by_class_name("result")
+assert result.text == "6" # Por ejemplo, si la base es 2 y la altura es 3, el area es 6
+
+# Cerramos el navegador
+driver.quit()
